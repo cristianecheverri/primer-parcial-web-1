@@ -1,7 +1,6 @@
 fetch('data/datos.json')
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         const titulo_pagina = document.getElementById('titulo_pagina');
         titulo_pagina.innerHTML = data.titulo_pagina;
 
@@ -12,7 +11,6 @@ fetch('data/datos.json')
             producto.imagenes.forEach(function (imagen) {
                 imagenes += `<img src="${imagen}" class="w-20"></img>`;
             })
-            console.log(imagenes);
 
             let reseñas = '';
 
@@ -40,7 +38,7 @@ fetch('data/datos.json')
         productosHtml.innerHTML = productos;
 
         let reseñas_destacadas = '';
-        data.reseñas_destacadas.forEach(function(reseña_destacada) {
+        data.reseñas_destacadas.forEach(function (reseña_destacada) {
             reseñas_destacadas += `
             <div class="col">
               <div class="card">
